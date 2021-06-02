@@ -185,7 +185,7 @@ DEPENDENCIES
   pg (>= 0.18, < 2.0)
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.7)
-  rspec (~> 3.5)
+  rspec
   shoulda-matchers (~> 4.5, >= 4.5.1)
   spring
   spring-watcher-listen (~> 2.0.0)
