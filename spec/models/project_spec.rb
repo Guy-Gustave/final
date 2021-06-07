@@ -2,11 +2,13 @@ require 'rails_helper'
 
 # Test suite for the Todo model
 RSpec.describe Project, type: :model do
-  # Association test
-  # ensure Todo model has a 1:m relationship with the Item model
-  it { should have_many(:tasks) }
-  # Validation tests
-  # # ensure columns title and created_by are present before saving
-  it { should validate_presence_of(:title) }
-  # it { should validate_presence_of(:description) }
+
+  it "is not valid without a title" do
+    proj = Project.new(title: nil)
+    expect(proj).to_not be_valid
+  end
+  it "is not valid without a description" do
+    proj = Project.new(description: nil)
+    expect(proj).to_not be_valid
+  end
 end
