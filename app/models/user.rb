@@ -1,6 +1,9 @@
 class User < ApplicationRecord
+  # encrypt password
   has_secure_password
-  validates :username, presence: true
-  validates :username, uniqueness: true
-  validates :username, length: { minimum: 4 }
+
+  # Model associations
+  has_many :projects, dependent: :destroy
+  # Validations
+  validates_presence_of :name, :email, :password_digest
 end
