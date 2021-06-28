@@ -10,9 +10,17 @@ class ProjectsController < ApplicationController
   end
 
   # POST /projects
+  # def create
+  #   @project = Project.create(project_params)
+  #   json_response(@project, :created)
+  # end
   def create
-    @project = Project.create!(project_params)
-    json_response(@project, :created)
+    project = Project.new(project_params)
+    if project.save
+      render json: project, status: 201, notice: 'Project was successfully created.'
+    else
+      render json: project.errors, status: :unprocessable_entity
+    end
   end
 
   # GET /projects/:id
@@ -36,7 +44,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     # whitelist params
-    params.permit(:title, :description, :rates)
+    params.require(:project).permit(:title, :description, :rates)
   end
 
   def set_project
