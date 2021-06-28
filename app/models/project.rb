@@ -3,6 +3,6 @@ class Project < ApplicationRecord
   # belongs_to :user
 
   # validations
-  validates :title, uniqueness: true
+  # validates :title, uniqueness: true
   validates_presence_of :title, :description
 end
