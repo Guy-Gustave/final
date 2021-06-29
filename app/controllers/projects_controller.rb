@@ -11,8 +11,14 @@ class ProjectsController < ApplicationController
 
   # POST /projects
   def create
-    @project = Project.create!(project_params)
-    json_response(@project, :created)
+    # @project = Project.create!(project_params)
+    # json_response(@project, :created)
+    @project = Project.new(project_params)
+    if @project.save
+      render json: { status: :created, project: @project }
+    else
+      render json: { status: 401, errors: @project.errors}
+    end 
   end
 
   # GET /projects/:id
