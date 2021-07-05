@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    tasks = Task.where(project_id: params[:project_id]).order("created_at DESC")
+    tasks = Task.where(project_id: params[:project_id]).order('created_at DESC')
     render json: tasks
   end
 

@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:show, :update, :destroy]
+  before_action :set_project, only: %i[show update destroy]
   # before_action :authenticate_and_set_user
 
   # GET /projects
@@ -41,7 +41,6 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    # whitelist params
     params.require(:project).permit(:title, :description, :rates)
   end
 
