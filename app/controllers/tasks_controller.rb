@@ -20,9 +20,10 @@ class TasksController < ApplicationController
     task.destroy
     head :no_content, status: :ok
   end
-  
+
   private
-    def task_param
-      params.require(:task).permit(:title, :done, :project_id)
-    end
+
+  def task_param
+    params.require(:task).permit(:title, :done, :project_id)
+  end
 end

@@ -13,7 +13,6 @@ class UsersController < ApplicationController
     @users = User.all
     json_response(@users)
   end
-  
 
   private
 

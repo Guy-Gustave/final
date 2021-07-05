@@ -6,5 +6,8 @@ RSpec.describe Task, type: :model do
   # it { should belong_to(:project) }
   # Validation test
   # ensure column name is present before saving
-  # it { should validate_presence_of(:title) }
+  it "is not valid without a title" do
+    titre = Task.new(title: nil)
+    expect(titre).to_not be_valid
+  end
 end

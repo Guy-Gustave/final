@@ -17,8 +17,8 @@ class ProjectsController < ApplicationController
     if @project.save
       render json: { status: :created, project: @project }
     else
-      render json: { status: 401, errors: @project.errors}
-    end 
+      render json: { status: 401, errors: @project.errors }
+    end
   end
 
   # GET /projects/:id
