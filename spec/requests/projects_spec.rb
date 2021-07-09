@@ -9,7 +9,7 @@ RSpec.describe 'Projects', type: :request do
     }
   end
 
-  describe "GET /index" do
+  describe 'GET /index' do
     it 'renders a successful response' do
       project = Project.new(valid_attributes)
       project.save
@@ -38,5 +38,4 @@ RSpec.describe 'Projects', type: :request do
       end.to change(Project, :count).by(1)
     end
   end
-
 end

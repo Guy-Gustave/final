@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
-  let!(:user) { User.create(name: "guy", email: "guy@gmail.com", password: "1234", password_confirmation: "1234") }
+  let!(:user) { User.create(name: 'guy', email: 'guy@gmail.com', password: '1234', password_confirmation: '1234') }
   let(:user_id) { user.id }
   let(:valid_attributes) do
     {
@@ -35,7 +35,9 @@ RSpec.describe 'Users', type: :request do
   end
 
   describe 'POST /users' do
-    let(:valid_attributes) { { user: { name: "guy", email: "guy@gmail.com", password: "1234", password_confirmation: "1234" } } }
+    let(:valid_attributes) do
+      { user: { name: 'guy', email: 'guy@gmail.com', password: '1234', password_confirmation: '1234' } }
+    end
 
     context 'when the request is valid' do
       before { post '/signup', params: valid_attributes }
