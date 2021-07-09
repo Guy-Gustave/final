@@ -7,4 +7,6 @@ class User < ApplicationRecord
   # Validations
   validates :email, format: { with: URI::MailTo::EMAIL_REGEXP }
   validates_presence_of :name, :email, :password_digest
+  validates :name, length: { minimum: 4 }
+  validates :password, length: { minimum: 4 }
 end

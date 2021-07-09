@@ -13,4 +13,6 @@ RSpec.describe Project, type: :model do
     proj = Project.new(description: nil)
     expect(proj).to_not be_valid
   end
+
+  it { should have_many(:tasks).dependent(:destroy) }
 end

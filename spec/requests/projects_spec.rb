@@ -37,11 +37,6 @@ RSpec.describe 'Projects', type: :request do
         post projects_url, params: { project: valid_attributes }
       end.to change(Project, :count).by(1)
     end
-
-    # it 'redirects to the created project' do
-    #   project projects_url, params: { project: valid_attributes }
-    #   expect(response).to be_successful
-    # end
   end
 
 end

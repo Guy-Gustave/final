@@ -10,4 +10,6 @@ RSpec.describe Task, type: :model do
     titre = Task.new(title: nil)
     expect(titre).to_not be_valid
   end
+
+  it { should belong_to(:project) }
 end

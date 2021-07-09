@@ -10,10 +10,11 @@ RSpec.describe 'Tasks', type: :request do
   end
 
   # describe "GET /index" do
+  #   before { get "/projects/#{project_id}/tasks" }
   #   it 'renders a successful response' do
   #     task = Task.new(valid_attributes)
   #     task.save
-  #     get project_tasks_url
+  #     # get project_tasks_url
   #     expect(response).to be_successful
   #   end
   # end 

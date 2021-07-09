@@ -33,6 +33,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rspec'
   gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 group :development do
@@ -44,7 +45,7 @@ end
 
 group :test do
   gem 'database_cleaner', '~> 2.0', '>= 2.0.1'
-  gem 'factory_bot_rails', '~> 6.2'
+  # gem 'factory_bot_rails', '~> 6.2'
   gem 'faker'
   gem 'shoulda-matchers', '~> 4.5', '>= 4.5.1'
 end
